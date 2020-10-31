@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define max 33
+int main()
+{
+	FILE *fp;
+	char str[max];
+	char* file="test.txt";
+	fp=fopen(file,"r");
+	fgets(str,max,fp);
+	printf("%s\n",str);
+	int sum=0;
+	for(int i=1;i<=32;i++)
+	{
+		sum+=((int)str[i-1])*i;
+		
+	}
+	printf("%d",sum);
+	fclose(fp);
+	return 0;
+}
